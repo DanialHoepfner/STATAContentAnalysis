@@ -118,7 +118,7 @@ gen guatemala	=0
 gen cuba	=0
 gen haiti	=0
 gen bolivia	=0
-gen dominicanrep	=0
+gen dominicanrep =0
 gen honduras	=0
 gen paraguay	=0
 gen nicaragua	=0
@@ -201,8 +201,6 @@ gen `i'2=floor(r(mean)*799) //Turns indicator variable into count of number of p
 }
 graph bar brazil2 mexico2 colombia2 argentina2 peru2 venezuela2 chile2 ecuador2 guatemala2 cuba2 haiti2 bolivia2 dominicanrep2 honduras2 paraguay2 nicaragua2 elsalvador2 costarica2 panama2 uruguay2
 
-
-******************************RESUME HERE
 
 *********Number of countries considered by track
 encode track, gen(track1)
@@ -316,16 +314,16 @@ di "Observation: `i'"
 *******Dropping words used less than 5 times
 local droplist="" 
 foreach i  of global wlist {
-	sum `i'
+	qui sum `i'
 	if r(mean)<5{
 		local droplist `droplist' `i'
 	}
 }
 drop `droplist'
 
-sum siglo-folklore, separator(0) // Can put table into excel and sort by mean 
+sum siglo-folklore, separator(0) // Can put table into excel and sort by mean to see most common words
 
-**Most popular non country words are: social politica america urban	city state latin cultural"
+**Most popular non-country words are: social politica america urban	city state latin cultural"
 drop siglo-folklore //Droping word counts
 ***********************Topic areas coding
 ****Coding some topic areas to check if some topics are more or less commonly together
@@ -407,4 +405,4 @@ foreach i in politics rural state women social urban development violencewar edu
 label variable `i'2 "`i' Count"
 }
 
-***Dataset and report sent off to Professor requesting analysis
+***Dataset and report sent off to professor requesting analysis
