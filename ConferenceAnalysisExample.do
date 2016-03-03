@@ -4,8 +4,8 @@
 **********************Written in STATA 14***************************************
 ********************************************************************************
 ********************************************************************************
-cd "C:\Users\Dan\Documents\ProgramLibrary\SelfWritten\Content Analysis"
-use "ConferenceExample", clear
+cd "SET YOUR CD HERE"
+use "ConferenceExample", clear //Add 13 to file name if using STATA 13
 
 *************Papers in the conference were written in Spanish, English and Portuguese
 *NOTE: I don't speak Spanish or Portuguese
